@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>amol MTV</title>
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+  </head>
+  <body>
+    <h1>amol MTV is here</h1>
+    <div class="container">
+      {% if insert%}
+      <table >
+        <thead>
+          <th>name</th>
+          <th>date</th>
+        </thead>
+        {% for acc in insert%}
+        <tr>
+          <td>{{acc.name}}</td>
+          <td>{{acc.date}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>no acess record found</p>
+      {% endif %}
+    </div>
+
+  </body>
+</html>
